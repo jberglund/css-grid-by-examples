@@ -1,0 +1,116 @@
+<!-- 
+  keywords: position absolute, tips och tricks!
+
+
+  grid-column: 1/ -1;
+
+  Rent praktiskt så slipper man förhålla sig till att ett av elementen måste vara större än vad du sättere absolut på inuti.
+  
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example X</title>
+    <link rel="stylesheet" href="/examples/global.css" />
+    <style>
+      linearGradient {
+        --color-stop-1: #423d89;
+        --color-stop-2: #03dac6;
+        --color-stop-3: #ffc4bc;
+      }
+      .grid {
+        padding: var(--global-padding, 10vmax);
+        display: grid;
+        grid-template-columns: max-content;
+        grid-template-rows: max-content;
+      }
+
+      .box {
+        background-color: var(--override-color, var(--color-so-pink));
+        /* background-color: transparent; */
+        border-radius: 0.5rem;
+      }
+
+      .green {
+        --override-color: #91fc91;
+        /* z-index: 5; */
+      }
+
+      /* svg {
+        width: 100%;
+        height: 100%;
+        display: none;
+      } */
+      /* .big-box {
+        align-self: end;
+        justify-self: right;
+      } */
+
+      .grid > * {
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="box">
+        <svg
+          viewBox="0 0 532 532"
+          preserveAspectRatio="xMidYMid meet"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <filter id="noise">
+              <feTurbulence
+                type="fractalNoise"
+                baseFrequency="250"
+                result="noisy"
+              />
+              <feColorMatrix type="saturate" values="0" />
+              <feBlend in="SourceGraphic" in2="noisy" mode="multiply" />
+            </filter>
+
+            <linearGradient id="gradient" x2="1" y2="1">
+              <stop offset="10%" stop-color="var(--color-stop-1)" />
+              <stop offset="90%" stop-color="var(--color-stop-3)" />
+            </linearGradient>
+
+            <mask id="mask">
+              <rect x="0" y="0" width="532" height="113" fill="black" />
+              <use xlink:href="#logo" href="#logo" color="white" />
+            </mask>
+          </defs>
+          <g filter="url(#noise)">
+            <circle r="300" cx="0" cy="130" fill="url(#gradient)" />
+            <circle r="300" cx="500" cy="200" fill="url(#gradient)" />
+          </g>
+
+          <rect
+            x="0"
+            y="0"
+            width="532"
+            height="113"
+            mask="url(#mask)"
+            filter="url(#noise)"
+            fill="url(#gradient)"
+          />
+        </svg>
+      </div>
+      <div class="box green big-box">
+        <h1>I AM BIG BOX</h1>
+        <p>because I have content, you see</p>
+      </div>
+      <div class="box">I am small box. Not a lot of content</div>
+    </div>
+  </body>
+</html>
+
+<!-- EVERYFIN STACKS!
+.grid > * {
+grid-column: 1 / -1;
+grid-row: 1 / -1;
+}  -->

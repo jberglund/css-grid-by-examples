@@ -1,0 +1,40 @@
+<!-- 
+  Exempel 1:
+
+  INTRO!
+
+  Vad täcker vi i denna
+
+  Vad gör display: grid?
+  När kan jag använda det?
+
+  keywords: display block, grid-gap
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example 1</title>
+    <link rel="stylesheet" href="/examples/global.css" />
+    <style>
+      .grid {
+        padding: var(--global-padding, 10vmax);
+        display: grid;
+      }
+      .box {
+        background-color: var(--color-so-pink);
+        border-radius: 0.5rem;
+      }
+
+      /* Caveat: Grids kan bugga om de inte har något innehåll. */
+      .box:after {
+        content: "I love lamp";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid"></div>
+  </body>
+</html>

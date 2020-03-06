@@ -1,0 +1,56 @@
+<!-- 
+  Exempel 2:
+  DL DT
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example 2</title>
+    <link rel="stylesheet" href="/examples/global.css" />
+    <style>
+      body {
+        padding: 2rem;
+        color: white;
+      }
+      .grid {
+        padding: var(--global-padding, 10vmax);
+        display: grid;
+      }
+      .box {
+        background-color: var(--color-so-pink);
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+
+      /* Caveat: Grids kan bugga om de inte har något innehåll. */
+      .box:after {
+        content: "I love lamp";
+      }
+    </style>
+  </head>
+  <body>
+    <dl>
+      <dt>Name</dt>
+      <dd>Godzilla</dd>
+      <dt>Born</dt>
+      <dd>1952</dd>
+      <dt>Birthplace</dt>
+      <dd>Japan</dd>
+      <dt>Color</dt>
+      <dd>Green</dd>
+    </dl>
+  </body>
+</html>
+
+<!-- 
+    display: grid;
+
+    grid-auto-rows: auto;
+    grid-template-columns: max-content max-content;
+
+    //width: 500px;
+    //justify-content: space-between;
+-->

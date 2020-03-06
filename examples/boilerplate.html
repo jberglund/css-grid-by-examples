@@ -1,0 +1,39 @@
+<!-- 
+  Exempel 1:
+  Vad gör display: grid?
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example X</title>
+    <link rel="stylesheet" href="/examples/global.css" />
+    <style>
+      .grid {
+        padding: var(--global-padding, 10vmax);
+        display: grid;
+      }
+      .box {
+        background-color: var(--color-so-pink);
+        border-radius: 0.5rem;
+      }
+
+      .box:after {
+        content: "I am box";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

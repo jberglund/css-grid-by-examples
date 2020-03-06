@@ -1,0 +1,15 @@
+{
+  "name": "css-grid",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch examples -e html,css  index.js"
+  },
+  "author": "Jacob Berglund <jacob@jberglund.se>",
+  "license": "MIT",
+  "dependencies": {
+    "nodemon": "^2.0.2",
+    "st": "^2.0.0"
+  }
+}

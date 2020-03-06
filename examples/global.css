@@ -1,0 +1,35 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-blue: #1f306e;
+  --color-so-pink: #f5487f;
+  --color-cerise: #8f3b76;
+
+  --global-padding: 10rem;
+}
+
+html {
+  background-color: var(--color-blue);
+  color: #553772;
+  font-size: 20px;
+  line-height: 1.6;
+  font-family: Graphik, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.box {
+  background-color: var(--color-so-pink);
+  border-radius: 0.5rem;
+}
+
+.box:empty:after {
+  content: "I am box";
+}

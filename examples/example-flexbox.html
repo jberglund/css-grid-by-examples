@@ -1,0 +1,75 @@
+<!-- 
+  Exempel XYX: spara på fleboxen
+
+  keywords: flex-grow vs 1fr. ish.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example X</title>
+    <link rel="stylesheet" href="/examples/global.css" />
+    <style>
+      .box {
+        background-color: var(--color-so-pink);
+        border-radius: 0.5rem;
+      }
+
+      .grid {
+        padding: var(--global-padding, 10vmax);
+        display: grid;
+        grid-auto-flow: column;
+      }
+
+      .flexbox {
+        padding: var(--global-padding, 10vmax);
+        display: flex;
+        flex-direction: row; /* why though? grid-auto-flow: row */
+      }
+
+      .box:after {
+        content: "I am box";
+      }
+
+      .flexbox .box:after {
+        content: "I am flex";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flexbox">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <div class="grid">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+
+  .grid {
+      padding: var(--global-padding, 10vmax);
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content 1fr max-content;
+    }
+
+    .flexbox {
+      padding: var(--global-padding, 10vmax);
+      display: flex;
+      flex-direction: row;
+    }
+
+  .flexbox .box:nth-child(2) {
+    /* btw: detta är varför jag älskar grid. */
+    flex-grow: 2;
+  }
+-->
